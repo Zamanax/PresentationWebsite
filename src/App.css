@@ -32,4 +32,9 @@ a {
 
 .Language-select-left-item, .Language-select-right-item {
     padding: 1em;
+    transition: ease-in-out 0.2s;
+}
+
+.Language-select-left-item:hover, .Language-select-right-item:hover {
+    transform: scale(1.2);
 }
