@@ -32,6 +32,29 @@ function App() {
             path: "/deutsch",
         },
     ];
+
+    const makeLanguageSelectItem = (lang, index, left) => {
+        return (
+            <div
+                className={`Language-select-${left ? "left" : "right"}-item`}
+                style={{
+                    marginRight: index.toString() * left + "em",
+                    marginLeft: index.toString() * !left + "em",
+                }}
+            >
+                <a href={lang.path}>
+                    {lang.name} -{" "}
+                    {lang.translation ? lang.translation : ""} -{" "}
+                    <img
+                        className="Language-select-item-image"
+                        src={`Images/Flags/${lang.name}.svg`}
+                        alt={`${lang.name} Flag`}
+                    />
+                </a>
+            </div>
+        );
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -40,43 +63,13 @@ function App() {
             <div className="Language-select">
                 <div className="Language-select-left">
                     {langs.slice(0, langs.length / 2).map((lang, index) => (
-                        <div
-                            className="Language-select-left-item"
-                            style={{
-                                marginRight: index.toString() + "em",
-                            }}
-                        >
-                            <a href={lang.path}>
-                                {lang.name} -{" "}
-                                {lang.translation ? lang.translation : ""} -{" "}
-                                <img
-                                    className="Language-select-item-image"
-                                    src={`Images/Flags/${lang.name}.svg`}
-                                    alt={`${lang.name} Flag`}
-                                />
-                            </a>
-                        </div>
+                      makeLanguageSelectItem(lang, index, true)
                     ))}
                 </div>
                 <img src="Images/logo.svg" className="App-logo" alt="logo" />
                 <div className="Language-select-right">
                     {langs.slice(langs.length / 2).map((lang, index) => (
-                        <div
-                            className="Language-select-right-item"
-                            style={{
-                                marginLeft: index.toString() + "em",
-                            }}
-                        >
-                            <a href={lang.path}>
-                                {lang.name} -{" "}
-                                {lang.translation ? lang.translation : ""} -{" "}
-                                <img
-                                    className="Language-select-item-image"
-                                    src={`Images/Flags/${lang.name}.svg`}
-                                    alt={`${lang.name} Flag`}
-                                />
-                            </a>
-                        </div>
+                      makeLanguageSelectItem(lang, index, false)
                     ))}
                 </div>
             </div>
