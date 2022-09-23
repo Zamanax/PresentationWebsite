@@ -10,10 +10,10 @@ function App() {
       <div className="Language-select">
         <div className="Language-select-left">
           <div className="Language-select-left-item">
-            <a href="/english">EN 🇬🇧</a>
+            <a href="/english">English</a>
           </div>
           <div className="Language-select-left-item" style={{"marginRight" : "5em"}}>
-            <a href="/chinese">CH 🇨🇳</a>
+            <a href="/chinese">Chinese - 中文</a>
           </div>
           <div className="Language-select-left-item">
             <a href="/japanese">JP 🇯🇵</a>
