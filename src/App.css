@@ -13,7 +13,7 @@ body {
 a {
     color: #333;
     text-decoration: none;
-    font-size: xx-large;
+    font-size: larger;
 }
 
 .Language-select {
@@ -37,4 +37,10 @@ a {
 
 .Language-select-left-item:hover, .Language-select-right-item:hover {
     transform: scale(1.2);
+}
+
+.Language-select-item-image {
+    max-width: 20%;
+    height: auto;
+    vertical-align: middle;
 }

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -10,26 +9,26 @@ function App() {
       <div className="Language-select">
         <div className="Language-select-left">
           <div className="Language-select-left-item">
-            <a href="/english">English</a>
+            <a href="/english">English - <img className='Language-select-item-image' src='Images/Flags/English.svg' alt="English Flag"/></a>
           </div>
-          <div className="Language-select-left-item" style={{"marginRight" : "5em"}}>
-            <a href="/chinese">Chinese - 中文</a>
+          <div className="Language-select-left-item" style={{"marginRight" : "6em"}}>
+            <a href="/chinese">Chinese - 中文 - <img className='Language-select-item-image' src='Images/Flags/Chinese.svg' alt="English Flag"/></a>
           </div>
           <div className="Language-select-left-item">
-            <a href="/japanese">JP 🇯🇵</a>
+            <a href="/japanese">Japanese - 日本語 - <img className='Language-select-item-image' src='Images/Flags/Japanese.svg' alt="English Flag"/></a>
           </div>
 
         </div>
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="Images/logo.svg" className="App-logo" alt="logo" />
         <div className="Language-select-right">
           <div className="Language-select-right-item">
-            <a href="/french">FR 🇫🇷</a>
+            <a href="/french">French - Français - <img className='Language-select-item-image' src='Images/Flags/French.svg' alt="English Flag"/></a>
           </div>
           <div className="Language-select-right-item" style={{"marginLeft" : "5em"}}>
-            <a href="/espanol">ES 🇪🇸</a>
+            <a href="/espanol">Spanish - Español - <img className='Language-select-item-image' src='Images/Flags/Spanish.svg' alt="English Flag"/></a>
           </div>
           <div className="Language-select-right-item">
-            <a href="/deutsch">DE 🇩🇪</a>
+            <a href="/deutsch">German - Deutsch - <img className='Language-select-item-image' src='Images/Flags/German.svg' alt="English Flag"/></a>
           </div>
         </div>
       </div>
