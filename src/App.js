@@ -1,39 +1,87 @@
-import './App.css';
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>A language learning app !</h1>
-      </header>
-      <div className="Language-select">
-        <div className="Language-select-left">
-          <div className="Language-select-left-item">
-            <a href="/english">English - <img className='Language-select-item-image' src='Images/Flags/English.svg' alt="English Flag"/></a>
-          </div>
-          <div className="Language-select-left-item" style={{"marginRight" : "6em"}}>
-            <a href="/chinese">Chinese - 中文 - <img className='Language-select-item-image' src='Images/Flags/Chinese.svg' alt="English Flag"/></a>
-          </div>
-          <div className="Language-select-left-item">
-            <a href="/japanese">Japanese - 日本語 - <img className='Language-select-item-image' src='Images/Flags/Japanese.svg' alt="English Flag"/></a>
-          </div>
-
+    const langs = [
+        {
+            name: "English",
+            path: "/english",
+        },
+        {
+            name: "Chinese",
+            translation: "中文",
+            path: "/chinese",
+        },
+        {
+            name: "Japanese",
+            translation: "日本語",
+            path: "/japanese",
+        },
+        {
+            name: "French",
+            translation: "Français",
+            path: "/french",
+        },
+        {
+            name: "Spanish",
+            translation: "Español",
+            path: "/espanol",
+        },
+        {
+            name: "German",
+            translation: "Deutsch",
+            path: "/deutsch",
+        },
+    ];
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>A language learning app !</h1>
+            </header>
+            <div className="Language-select">
+                <div className="Language-select-left">
+                    {langs.slice(0, langs.length / 2).map((lang, index) => (
+                        <div
+                            className="Language-select-left-item"
+                            style={{
+                                marginRight: index.toString() + "em",
+                            }}
+                        >
+                            <a href={lang.path}>
+                                {lang.name} -{" "}
+                                {lang.translation ? lang.translation : ""} -{" "}
+                                <img
+                                    className="Language-select-item-image"
+                                    src={`Images/Flags/${lang.name}.svg`}
+                                    alt={`${lang.name} Flag`}
+                                />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+                <img src="Images/logo.svg" className="App-logo" alt="logo" />
+                <div className="Language-select-right">
+                    {langs.slice(langs.length / 2).map((lang, index) => (
+                        <div
+                            className="Language-select-right-item"
+                            style={{
+                                marginLeft: index.toString() + "em",
+                            }}
+                        >
+                            <a href={lang.path}>
+                                {lang.name} -{" "}
+                                {lang.translation ? lang.translation : ""} -{" "}
+                                <img
+                                    className="Language-select-item-image"
+                                    src={`Images/Flags/${lang.name}.svg`}
+                                    alt={`${lang.name} Flag`}
+                                />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-        <img src="Images/logo.svg" className="App-logo" alt="logo" />
-        <div className="Language-select-right">
-          <div className="Language-select-right-item">
-            <a href="/french">French - Français - <img className='Language-select-item-image' src='Images/Flags/French.svg' alt="English Flag"/></a>
-          </div>
-          <div className="Language-select-right-item" style={{"marginLeft" : "5em"}}>
-            <a href="/espanol">Spanish - Español - <img className='Language-select-item-image' src='Images/Flags/Spanish.svg' alt="English Flag"/></a>
-          </div>
-          <div className="Language-select-right-item">
-            <a href="/deutsch">German - Deutsch - <img className='Language-select-item-image' src='Images/Flags/German.svg' alt="English Flag"/></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default App;

@@ -40,7 +40,7 @@ a {
 }
 
 .Language-select-item-image {
-    max-width: 20%;
+    max-width: 100px;
     height: auto;
     vertical-align: middle;
 }
